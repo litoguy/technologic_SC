@@ -7,6 +7,8 @@ import {
   FormControl,
   FormLabel,
   Heading,
+  HStack,
+  Icon,
   Input,
   Link,
   Switch,
@@ -15,11 +17,13 @@ import {
 } from "@chakra-ui/react";
 // Assets
 import signInImage from "assets/img/signInImage.png";
+import { FaApple, FaFacebook, FaGoogle } from "react-icons/fa";
 
 function SignIn() {
   // Chakra color mode
   const titleColor = useColorModeValue("teal.300", "teal.200");
   const textColor = useColorModeValue("gray.400", "white");
+  const bgIcons = useColorModeValue("teal.200", "rgba(255, 255, 255, 0.5)");
   return (
     <Flex position='relative' mb='40px'>
       <Flex
@@ -44,6 +48,27 @@ function SignIn() {
             <Heading color={titleColor} fontSize='32px' mb='10px'>
               Welcome Back
             </Heading>
+            <HStack spacing='15px' justify='center' mb='22px'>
+            <Flex
+              justify='center'
+              align='center'
+              w='75px'
+              h='75px'
+              borderRadius='15px'
+              border='1px solid lightgray'
+              cursor='pointer'
+              transition='all .25s ease'
+              _hover={{ filter: "brightness(120%)", bg: bgIcons }}>
+              <Link href='#'>
+                <Icon
+                  as={FaGoogle}
+                  w='30px'
+                  h='30px'
+                  _hover={{ filter: "brightness(120%)" }}
+                />
+              </Link>
+            </Flex>
+          </HStack>
             <Text
               mb='36px'
               ms='4px'

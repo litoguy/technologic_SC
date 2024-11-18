@@ -87,7 +87,7 @@ export default function AuthNavbar(props) {
   );
   var linksAuth = (
     <HStack display={{ sm: "none", lg: "flex" }}>
-      <NavLink to="/admin/dashboard">
+      {/* <NavLink to="/admin/dashboard">
         <Button
           fontSize="sm"
           ms="0px"
@@ -100,8 +100,8 @@ export default function AuthNavbar(props) {
         >
           <Text>Dashboard</Text>
         </Button>
-      </NavLink>
-      <NavLink to="/admin/profile">
+      </NavLink> */}
+      {/* <NavLink to="/admin/profile">
         <Button
           fontSize="sm"
           ms="0px"
@@ -116,8 +116,8 @@ export default function AuthNavbar(props) {
         >
           <Text>Profile</Text>
         </Button>
-      </NavLink>
-      <NavLink to="/auth/signup">
+      </NavLink> */}
+       <NavLink to="/auth/signup">
         <Button
           fontSize="sm"
           ms="0px"
@@ -132,8 +132,8 @@ export default function AuthNavbar(props) {
         >
           <Text>Sign Up</Text>
         </Button>
-      </NavLink>
-      <NavLink to="/auth/signin">
+      </NavLink> 
+       <NavLink to="/auth/signin">
         <Button
           fontSize="sm"
           ms="0px"
@@ -147,7 +147,7 @@ export default function AuthNavbar(props) {
         >
           <Text>Sign In</Text>
         </Button>
-      </NavLink>
+      </NavLink> 
     </HStack>
   );
   return (
@@ -184,7 +184,7 @@ export default function AuthNavbar(props) {
           />
         </Box>
         {linksAuth}
-        <Link href="https://creative-tim.com/product/purity-ui-dashboard">
+        {/* <Link href="https://creative-tim.com/product/purity-ui-dashboard">
           <Button
             bg={bgButton}
             color={colorButton}
@@ -199,7 +199,7 @@ export default function AuthNavbar(props) {
           >
             Free Download
           </Button>
-        </Link>
+        </Link> */}
       </Flex>
     </Flex>
   );

@@ -1,5 +1,6 @@
 // import
 import Dashboard from "views/Dashboard/Dashboard";
+import CarDashboard from "views/CarrierDashboard /Dashboard";
 import Tables from "views/Dashboard/Tables";
 import Billing from "views/Dashboard/Billing";
 import RTLPage from "views/Dashboard/RTL";
@@ -24,6 +25,14 @@ var dashRoutes = [
     rtlName: "لوحة القيادة",
     icon: <HomeIcon color="inherit" />,
     component: Dashboard,
+    layout: "/admin",
+  },
+  {
+    path: "/Carrier",
+    name: "Carrier Dashboard",
+    rtlName: "Carrier Dashboard",
+    icon: <HomeIcon color="inherit" />,
+    component: CarDashboard,
     layout: "/admin",
   },
   {

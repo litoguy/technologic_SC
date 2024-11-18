@@ -6,6 +6,7 @@ import {
   FormControl,
   FormLabel,
   HStack,
+  Select,
   Icon,
   Input,
   Link,
@@ -17,6 +18,7 @@ import {
 import BgSignUp from "assets/img/BgSignUp.png";
 import React from "react";
 import { FaApple, FaFacebook, FaGoogle } from "react-icons/fa";
+import { Grid, GridItem } from "@chakra-ui/react"
 
 function SignUp() {
   const titleColor = useColorModeValue("teal.300", "teal.200");
@@ -49,8 +51,8 @@ function SignUp() {
         textAlign='center'
         justifyContent='center'
         align='center'
-        mt='6.5rem'
-        mb='30px'>
+        mt='7.5rem'
+        mb='40px'>
         <Text fontSize='4xl' color='white' fontWeight='bold'>
           Welcome!
         </Text>
@@ -61,8 +63,7 @@ function SignUp() {
           mt='10px'
           mb='26px'
           w={{ base: "90%", sm: "60%", lg: "40%", xl: "30%" }}>
-          Use these awesome forms to login or create new account in your project
-          for free.
+          Create an Account.
         </Text>
       </Flex>
       <Flex alignItems='center' justifyContent='center' mb='60px' mt='20px'>
@@ -151,30 +152,110 @@ function SignUp() {
             or
           </Text>
           <FormControl>
+          <Grid templateColumns="repeat(3, 1fr)" gap={4}>
+            {/* <FormLabel ms='4px' fontSize='sm' fontWeight='normal'>
+              First Name
+            </FormLabel> */}
+            <Input
+              fontSize='sm'
+              ms='4px'
+              borderRadius='15px'
+              type='text'
+              placeholder='First name'
+              mb='24px'
+              size='lg'
+            />
+            {/* <FormLabel ms='4px' fontSize='sm' fontWeight='normal'>
+              Last Name
+            </FormLabel> */}
+            <Input
+              fontSize='sm'
+              ms='4px'
+              borderRadius='15px'
+              type='text'
+              placeholder='Last Name'
+              mb='24px'
+              size='lg'
+              required
+            />
+            {/* <FormLabel ms='4px' fontSize='sm' fontWeight='normal'>
+              Company Name
+            </FormLabel> */}
+            <Input
+              fontSize='sm'
+              ms='4px'
+              borderRadius='15px'
+              type='text'
+              placeholder='Email'
+              mb='24px'
+              size='lg'
+              required
+            />
+            </Grid>
             <FormLabel ms='4px' fontSize='sm' fontWeight='normal'>
-              Name
+              Address
             </FormLabel>
             <Input
               fontSize='sm'
               ms='4px'
               borderRadius='15px'
               type='text'
-              placeholder='Your full name'
+              placeholder='Address'
               mb='24px'
               size='lg'
+              required
+            />
+             <FormLabel ms='4px' fontSize='sm' fontWeight='normal'>
+              DOT Number
+            </FormLabel>
+            <Input
+              fontSize='sm'
+              ms='4px'
+              borderRadius='15px'
+              type='text'
+              placeholder='Your DOT Number'
+              mb='24px'
+              size='lg'
+              required
             />
             <FormLabel ms='4px' fontSize='sm' fontWeight='normal'>
-              Email
+               MC Number
+            </FormLabel>
+            <Input
+              fontSize='sm'
+              ms='4px'
+              borderRadius='15px'
+              type='text'
+              placeholder='Your MC Number'
+              mb='24px'
+              size='lg'
+              required
+            />
+             <FormLabel ms='4px' fontSize='sm' fontWeight='normal' >User Type</FormLabel>
+               <Select placeholder="User Type" required>
+                  <option>Individual</option>
+                  <option>Company</option>
+               </Select>
+            <FormLabel ms='4px' fontSize='sm' fontWeight='normal'>
+              Company Name
             </FormLabel>
             <Input
               fontSize='sm'
               ms='4px'
               borderRadius='15px'
               type='email'
-              placeholder='Your email address'
+              placeholder='Company Name'
               mb='24px'
               size='lg'
+              required
             />
+            <FormLabel ms='4px' fontSize='sm' fontWeight='normal' >Account Type</FormLabel>
+               <Select placeholder="Account Type" required>
+                  <option>Carrier</option>
+                  <option>Shipper</option>
+                  <option>Broker</option>
+               </Select>
+
             <FormLabel ms='4px' fontSize='sm' fontWeight='normal'>
               Password
             </FormLabel>
@@ -186,21 +267,35 @@ function SignUp() {
               placeholder='Your password'
               mb='24px'
               size='lg'
+              required
+            />
+             <FormLabel ms='4px' fontSize='sm' fontWeight='normal'>
+              Confirm Password
+            </FormLabel>
+            <Input
+              fontSize='sm'
+              ms='4px'
+              borderRadius='15px'
+              type='password'
+              placeholder='Re-enter Your password'
+              mb='24px'
+              size='lg'
+              required
             />
             <FormControl display='flex' alignItems='center' mb='24px'>
-              <Switch id='remember-login' colorScheme='teal' me='10px' />
-              <FormLabel htmlFor='remember-login' mb='0' fontWeight='normal'>
-                Remember me
+              <Switch id='accept' colorScheme='teal' me='10px' required/>
+              <FormLabel htmlFor='accept' mb='0' fontWeight='normal'>
+                I accept to all the terms and condition.
               </FormLabel>
             </FormControl>
             <Button
               type='submit'
               bg='teal.300'
-              fontSize='10px'
+              fontSize='15px'
               color='white'
               fontWeight='bold'
               w='100%'
-              h='45'
+              h='50'
               mb='24px'
               _hover={{
                 bg: "teal.200",
@@ -223,7 +318,7 @@ function SignUp() {
                 color={titleColor}
                 as='span'
                 ms='5px'
-                href='#'
+                href='auth/signin'
                 fontWeight='bold'>
                 Sign In
               </Link>
